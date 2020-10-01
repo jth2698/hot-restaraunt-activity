@@ -8,9 +8,10 @@ app.use(express.json());
 
 var data = [{
     routeName: "api-data",
-    name: "",
-    table: "05",
-    date: "10/05/2020",
+    name: "somedude",
+    phone: "555-5555",
+    email: "dude@cool.com",
+    id: 05
 }]
 
 
