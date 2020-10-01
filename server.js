@@ -8,11 +8,21 @@ var PORT = process.env.PORT || 8080
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-var data = [{
+var reservations = [{
     routeName: "api-data",
     name: "somedude",
     phone: "555-5555",
     email: "dude@cool.com",
+    id: 05
+}]
+
+var waitList = [{
+    routeName: "api-data",
+
+    name: "anotherdude",
+    phone: "555-5555",
+    email: "dude@notsocool.com",
+
     id: 05
 }]
 
@@ -31,9 +41,47 @@ app.get("/add", function (req, res) {
     res.sendFile(path.join(__dirname, "view.html"));
 });
 
+
 // This allows the user to see the data currently stored in the api.
-app.get("/api/data", function (req, res) {
-    return res.json(data);
+app.get("/api/reservations", function (req, res) {
+    return res.json(reservations);
+});
+
+app.get("/api/waitlist", function (req, res) {
+    return res.json(waitList);
+});
+
+// Add app.post for new reservation and waitlist apis
+
+app.post("/api/reservations", function (req, res) {
+    // req.body hosts is equal to the JSON post sent from the user
+    // This works because of our body parsing middleware
+    var newReservation = req.body;
+
+    // Using a RegEx Pattern to remove spaces from newCharacter
+    newReservation.routeName = newReservation.name.replace(/\s+/g, "").toLowerCase();
+
+    console.log(newReservation);
+
+    reservations.push(newReservation);
+
+    res.json(newReservation);
+});
+
+app.post("/api/waitlist", function (req, res) {
+    // req.body hosts is equal to the JSON post sent from the user
+    // This works because of our body parsing middleware
+    var newWaitList = req.body;
+
+    // Using a RegEx Pattern to remove spaces from newCharacter
+    newWaitList.routeName = newWaitList.name.replace(/\s+/g, "").toLowerCase();
+
+    console.log(newWaitList);
+
+    waitList.push(newWaitList;
+
+    res.json(newWaitList);
+
 });
 
 app.listen(PORT, function () {
