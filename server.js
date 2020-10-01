@@ -20,12 +20,12 @@ app.get("/", function (req, res) {
 });
 
 // Serving "reservation.html" if user navigates to ""./reservation.html." This is where our reservation form should be.
-app.get("/add", function (req, res) {
-    res.sendFile(path.join(__dirname, "reservation.html"));
+app.get("/reservations", function (req, res) {
+    res.sendFile(path.join(__dirname, "reservations.html"));
 });
 
 // Serving "view.html" if user navigates to the "./view.html." This is the page that will show booked tables and the waiting list.
-app.get("/add", function (req, res) {
+app.get("/view", function (req, res) {
     res.sendFile(path.join(__dirname, "view.html"));
 });
 
