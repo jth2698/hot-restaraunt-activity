@@ -28,7 +28,7 @@ app.get("/add", function (req, res) {
 
 // Serving "view.html" if user navigates to the "./view.html." This is the page that will show booked tables and the waiting list.
 app.get("/add", function (req, res) {
-    res.sendFile(path.join(__dirname, "reservation.html"));
+    res.sendFile(path.join(__dirname, "view.html"));
 });
 
 // This allows the user to see the data currently stored in the api.
