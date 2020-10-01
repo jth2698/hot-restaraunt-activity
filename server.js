@@ -18,9 +18,11 @@ var reservations = [{
 
 var waitList = [{
     routeName: "api-data",
+
     name: "anotherdude",
     phone: "555-5555",
     email: "dude@notsocool.com",
+
     id: 05
 }]
 
@@ -38,6 +40,7 @@ app.get("/add", function (req, res) {
 app.get("/add", function (req, res) {
     res.sendFile(path.join(__dirname, "view.html"));
 });
+
 
 // This allows the user to see the data currently stored in the api.
 app.get("/api/reservations", function (req, res) {
@@ -78,6 +81,7 @@ app.post("/api/waitlist", function (req, res) {
     waitList.push(newWaitList;
 
     res.json(newWaitList);
+
 });
 
 app.listen(PORT, function () {
