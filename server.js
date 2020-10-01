@@ -9,21 +9,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 var reservations = [{
-    routeName: "api-data",
-    name: "somedude",
-    phone: "555-5555",
-    email: "dude@cool.com",
-    id: 05
 }]
 
 var waitList = [{
-    routeName: "api-data",
-
-    name: "anotherdude",
-    phone: "555-5555",
-    email: "dude@notsocool.com",
-
-    id: 05
 }]
 
 // Setting root page to be "index.html" and serving "index.html" if user navigates to root
@@ -58,8 +46,10 @@ app.post("/api/reservations", function (req, res) {
     // This works because of our body parsing middleware
     var newReservation = req.body;
 
+    console.log(req.body);
+
     // Using a RegEx Pattern to remove spaces from newCharacter
-    newReservation.routeName = newReservation.name.replace(/\s+/g, "").toLowerCase();
+    // newReservation.routeName = newReservation.name.replace(/\s+/g, "").toLowerCase();
 
     console.log(newReservation);
 
@@ -74,11 +64,11 @@ app.post("/api/waitlist", function (req, res) {
     var newWaitList = req.body;
 
     // Using a RegEx Pattern to remove spaces from newCharacter
-    newWaitList.routeName = newWaitList.name.replace(/\s+/g, "").toLowerCase();
+    // newWaitList.routeName = newWaitList.name.replace(/\s+/g, "").toLowerCase();
 
     console.log(newWaitList);
 
-    waitList.push(newWaitList;
+    waitList.push(newWaitList);
 
     res.json(newWaitList);
 
