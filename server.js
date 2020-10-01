@@ -29,6 +29,7 @@ app.get("/add", function (req, res) {
     res.sendFile(path.join(__dirname, "view.html"));
 });
 
+
 // This allows the user to see the data currently stored in the api.
 app.get("/api/reservations", function (req, res) {
     return res.json(reservations);
@@ -70,6 +71,7 @@ app.post("/api/waitlist", function (req, res) {
     waitList.push(newWaitList);
 
     res.json(newWaitList);
+
 });
 
 app.listen(PORT, function () {
