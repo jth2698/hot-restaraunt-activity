@@ -1,100 +1,136 @@
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-      crossorigin="anonymous"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
-    <title>Hot Restaurant</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> 
 
-    <style> 
-      </style>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Hot Restaurant</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
-  <body>
-    <header class="jumbotron">
-      <h1 class="display-3">Hot Restaurant</h1>
-      <h2 class="lead">Make your Reservation</h2>
-      <div id="clock">12:00PM</div>
-      <button type="button" class="btn btn-primary">View Tables</button>
-      <button type="button" class="btn btn-success">Home</button>
-      
-    </header>
-      <!-- Timeblocks go here -->
-    
-    </div>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <style>
+  </style>
+</head>
 
-    <script>
-      const clock = document.getElementById('clock');
+<body>
+  <header class="jumbotron">
+    <h1 class="display-3">Hot Restaurant</h1>
+    <h2 class="lead">Make your Reservation</h2>
+    <div id="clock">12:00PM</div>
+    <button type="button" class="btn btn-primary">View Tables</button>
+    <button type="button" class="btn btn-success">Home</button>
 
-      function updateTime () {
+  </header>
+  <!-- Timeblocks go here -->
 
-        const now = moment();
-        const humanReadable = now.format('MMMM Do YYYY, hh:mm:ssA')
+  </div>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+
+  <script>
+    const clock = document.getElementById('clock');
+
+    function updateTime() {
+
+      const now = moment();
+      const humanReadable = now.format('MMMM Do YYYY, hh:mm:ssA')
 
 
-        clock.textContent = humanReadable;
+      clock.textContent = humanReadable;
 
-      }
-      setInterval(updateTime, 1000);
-      updateTime();
-    </script>
-  </body>
-  
-  <table class="table table-striped table-hover table-bordered">
+    }
+    setInterval(updateTime, 1000);
+    updateTime();
+  </script>
+</body>
 
-    <thead>
-      <tr>
-        <th scope="col">Table Reservation</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr></tr>
-        <th scope="row">Name:</th>
-        <td><input type=""style="width:400px;"></td>
-        <td><button>
-            <label class="btn btn-secondary active">
-              <input type="checkbox">
-              <i class="fas fa-save"></i>
-            </label>
-          </div>
-        </button></td>
-        <tr ></tr>
-      </tr>
-      <tr>
-        <th scope="row">Phone Number:</th>
-        <td><input type=""style="width:400px;"></td>
-      </tr>
-      <tr>
-        <th scope="row">Email:</th>
-        <td><input type=""style="width:400px;"></td>
-      </tr>
-      <tr>
-        <th scope="row">Unique ID:</th>
-        <td><input type=""style="width:400px;"></td>
-      </tr>
-      <tr>
-      </tr>
-      <tr>
-      </html>
+<table class="table table-striped table-hover table-bordered">
+
+  <thead>
+    <tr>
+      <th scope="col">Table Reservation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr></tr>
+    <th scope="row">Name:</th>
+    <td><input type="" style="width:400px;" id=></td>
+    <td><button>
+        <label class="btn btn-secondary active">
+          <input type="checkbox">
+          <i class="fas fa-save"></i>
+        </label>
+        </div>
+      </button></td>
+    <tr></tr>
+    </tr>
+    <tr>
+      <th scope="row">Phone Number:</th>
+      <td><input type="" style="width:400px;"></td>
+    </tr>
+    <tr>
+      <th scope="row">Email:</th>
+      <td><input type="" style="width:400px;"></td>
+    </tr>
+    <tr>
+      <th scope="row">Unique ID:</th>
+      <td><input type="" style="width:400px;"></td>
+    </tr>
+    <tr>
+    </tr>
+    <tr>
+
+      <script type="text/javascript">
+
+        $(".submit").on("click", function () {
+
+          var newReservation = {
+            customerName: $('#reserve_name').val().trim(),
+            phoneNumber: $('#reserve_phone').val().trim(),
+            customerEmail: $('#reserve_email').val().trim(),
+            customerID: $('#reserve_uniqueID').val().trim()
+          };
+
+          console.log(newReservation);
+
+          var currentURL = window.location.origin;
+
+          $.post(currentURL + "/api/tables", newReservation,
+            function (data) {
+
+              // If a table is available... tell user they are booked.
+              if (data == true) {
+                alert("Yay! You are officially booked!")
+              }
+
+              // If a table is available... tell user they on the waiting list.
+              if (data == false) {
+                alert("Sorry you are on the wait list")
+              }
+
+              // Clear the form when submitting
+              $('#reserve_name').val("");
+              $('#reserve_phone').val("");
+              $('#reserve_email').val("");
+              $('#reserve_uniqueID').val("");
+
+            });
+
+          return false;
+        });
+
+</html >
